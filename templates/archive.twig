@@ -1,0 +1,8 @@
+{% extends 'templates/base/base.twig' %}
+{% block body %}
+	{% for post in posts %}
+		<h2>{{ post.title }}</h2>
+		{{ post.content|raw }}
+		<a class="btn btn-primary" href="{{ post.path }}">Lire</a>
+	{% endfor %}
+{% endblock %}

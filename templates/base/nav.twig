@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container">
+		<a class="navbar-brand" href="{{ site.home_url }}">{{ site.name }}</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				{% for menuItem in menus.main.items %}
+					{% if menuItem.children %}
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle {{ menuItem.current ? "active" : "" }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								{{ menuItem.title }}
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								{% for menuItemChild in menuItem.children %}
+									<li><a class="dropdown-item {{ menuItemChild.current ? "active" : "" }}" {{ menuItemChild.external ? 'target="_blank"' : ''}} href="{{ menuItemChild.path }}">{{ menuItemChild.title }}</a></li>
+								{% endfor %}
+							</ul>
+						</li>
+					{% else %}
+						<li class="nav-item">
+							<a class="nav-link {{ menuItem.current ? "active" : "" }}" aria-current="page" href="{{ menuItem.path  }}">{{ menuItem.title }}</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</nav>
+

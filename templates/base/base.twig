@@ -1,0 +1,27 @@
+<!doctype html>
+<html {{site.language_attributes}}>
+<head>
+	<meta charset="{{site.charset}}">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	{{ function('wp_head') }}
+</head>
+<body>
+	{{ function('wp_body_open') }}
+	{% include 'templates/base/nav.twig' %}
+	<div class="container pt-5">
+		<div class="row">
+			<div class="col-{{ sidebar and not disableSidebar ? "8" : "12"}}">
+				{% block body %}{% endblock %}
+			</div>
+			{% if sidebar and not disableSidebar%}
+				<div class="col-4" id="sidebar">
+					{{ sidebar }}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</body>
+</html>

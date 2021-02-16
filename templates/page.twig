@@ -1,0 +1,11 @@
+{% extends 'templates/base/base.twig' %}
+{% block body %}
+	<h1>{{ post.title }}</h1>
+	{{ post.content|raw }}
+
+	<div class="card m-5 p-3 shadow border-0">
+		<div class="card-content">
+			Hello
+		</div>
+	</div>
+{% endblock %}

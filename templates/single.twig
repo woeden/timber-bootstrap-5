@@ -1,0 +1,13 @@
+{% extends 'templates/base/base.twig' %}
+{% import 'templates/partial/comment.twig' as comment %}
+
+
+{% block body %}
+	<h1>{{ post.title }}</h1>
+	{{ post.content|raw }}
+	{% for comment in post.comments %}
+		{{ comment.comment(comment) }}
+	{% endfor %}
+	{% include 'templates/partial/comment-form.twig' %}
+
+{% endblock %}
