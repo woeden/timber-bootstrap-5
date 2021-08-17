@@ -22,9 +22,10 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 */
-@import "node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/functions";
 @import "variables";
-@import "node_modules/bootstrap/scss/mixins";
-@import "node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/bootstrap";
 @import "widgets";
-@import "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+@import "../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+@import "../node_modules/bootstrap-icons/";

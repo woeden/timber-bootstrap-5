@@ -8,10 +8,10 @@
 	<title>Document</title>
 	{{ function('wp_head') }}
 </head>
-<body>
+<body class="min-vh-100 d-flex flex-column">
 	{{ function('wp_body_open') }}
 	{% include 'templates/base/nav.twig' %}
-	<div class="container pt-5">
+	<div class="container flex-fill pt-5 {% block container_classes %}{% endblock %}">
 		<div class="row">
 			<div class="col-{{ sidebar and not disableSidebar ? "8" : "12"}}">
 				{% block body %}{% endblock %}
@@ -23,5 +23,6 @@
 			{% endif %}
 		</div>
 	</div>
+	{% include 'templates/base/footer.twig' %}
 </body>
 </html>

@@ -1,4 +1,6 @@
 {% extends 'templates/base/base.twig' %}
 {% block body %}
-	{{ dump(posts) }}
+	<div class="h-100 flex justify-content-center">
+		{{ post.content|raw }}
+	</div>
 {% endblock %}
