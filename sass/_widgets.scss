@@ -109,6 +109,15 @@
 			}
 		}
 	}
+	.wp-block-archives
+	{
+
+			@extend .list-group;
+			li {
+				@extend .list-group-item;
+			}
+
+	}
 
 }
 
